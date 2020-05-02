@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 // @ts-ignore
 import baseList from '../assets/baseList.json';
+import {SpinTheWheelService} from './spin-the-wheel.service';
+import {BouffeItem} from './bouffe-item';
 
 @Component({
   selector: 'app-main-page',
@@ -10,33 +12,21 @@ import baseList from '../assets/baseList.json';
 export class AppComponent {
   title = 'keskonmange-angular';
   list;
+  spinTheWheelService = new SpinTheWheelService();
 
   constructor() {
-    this.list = baseList.baseList.map(item => ({
-      value: item,
-      wanted: true
-    }));
+    this.list = baseList.baseList.map(item => new BouffeItem(item, true));
   }
 
   toto = 'burger';
   result: string;
 
   addToList() {
-    this.list.push({
-      value: this.toto,
-      wanted: true
-    });
-  }
-
-  toggleWanted(bouffe: any) {
-    bouffe.isWanted = false;
+    this.list.push(new BouffeItem(this.toto, true));
   }
 
   spinTheWheel() {
-    this.result = this.list[this.getRandomInt(this.list.length)].value;
+    this.result = this.spinTheWheelService.chooseForMe(this.list);
   }
 
-  getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
 }
