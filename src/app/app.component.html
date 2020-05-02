@@ -7,14 +7,23 @@
   <div class="the-bouffe-list">
     <ul *ngFor="let bouffe of list" class="bouuf">
       <li>
-        <input type="checkbox" [(ngModel)]="bouffe.wanted">
+        <label>
+          <input type="checkbox" [(ngModel)]="bouffe.wanted">
+        </label>
         {{bouffe.value}}
       </li>
     </ul>
   </div>
   <div>
-    <input type="text" [(ngModel)]="toto">
-    <button (click)="addToList()">Add</button>
+    <label>
+      <input type="text" [(ngModel)]="toto">
+    </label>
+    <button (click)="addToList()">Ajouter à la liste</button>
+  </div>
+
+  <div>
+    <button (click)="spinTheWheel()">Choisir à ma place</button>
+    <div>{{result}}</div>
   </div>
 </div>
 

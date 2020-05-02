@@ -12,27 +12,31 @@ export class AppComponent {
   list;
 
   constructor() {
-    // let list: object[];
-    // tslint:disable-next-line:only-arrow-functions
-    this.list = baseList.baseList.map(function(item) {
-      return {
-        value: item,
-        wanted: true
-      };
-    });
+    this.list = baseList.baseList.map(item => ({
+      value: item,
+      wanted: true
+    }));
   }
 
   toto = 'burger';
+  result: string;
 
   addToList() {
     this.list.push({
       value: this.toto,
       wanted: true
     });
-    this.toto = '';
   }
 
   toggleWanted(bouffe: any) {
     bouffe.isWanted = false;
+  }
+
+  spinTheWheel() {
+    this.result = this.list[this.getRandomInt(this.list.length)].value;
+  }
+
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
   }
 }
