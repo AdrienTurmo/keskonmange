@@ -1,0 +1,21 @@
+<div class="main-page" role="main">
+
+  <h1 class="title" id="title">
+    Keskonmange ?
+  </h1>
+
+  <div class="the-bouffe-list">
+    <ul *ngFor="let bouffe of list" class="bouuf">
+      <li>
+        <input type="checkbox" [(ngModel)]="bouffe.wanted">
+        {{bouffe.value}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="toto">
+    <button (click)="addToList()">Add</button>
+  </div>
+</div>
+
+
