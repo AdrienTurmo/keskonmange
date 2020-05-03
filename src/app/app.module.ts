@@ -8,7 +8,7 @@ import {ChooseForMeComponent} from './choose-for-me/choose-for-me.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ChooseForMeComponent
+    ChooseForMeComponent,
   ],
   imports: [
     BrowserModule,

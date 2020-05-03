@@ -1,26 +1,24 @@
 import {Component} from '@angular/core';
 import baseList from '../assets/baseList.json';
-import {SpinTheWheelService} from './choose-for-me/spin-the-wheel.service';
 import {BouffeItem} from './bouffe-item';
+import {ChooseForMeComponent} from './choose-for-me/choose-for-me.component';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  viewProviders: [ChooseForMeComponent]
 })
 export class AppComponent {
-  title = 'keskonmange-angular';
-  list;
-  spinTheWheelService = new SpinTheWheelService();
-
-  constructor() {
-    this.list = baseList.baseList.map(item => new BouffeItem(item, true));
-  }
-
-  toto = 'burger';
+  bouffeList;
+  newBouffe = 'Burger';
   result: string;
 
+  constructor() {
+    this.bouffeList = baseList.baseList.map(item => new BouffeItem(item, true));
+  }
+
   addToList() {
-    this.list.push(new BouffeItem(this.toto, true));
+    this.bouffeList.push(new BouffeItem(this.newBouffe, true));
   }
 }
