@@ -5,7 +5,7 @@
   </h1>
 
   <div class="the-bouffe-list">
-    <ul *ngFor="let bouffe of list" class="bouuf">
+    <ul *ngFor="let bouffe of bouffeList" class="bouuf">
       <li>
         <label>
           <input type="checkbox" [(ngModel)]="bouffe.isWanted">
@@ -16,13 +16,13 @@
   </div>
   <div>
     <label>
-      <input type="text" (keyup.enter)="addToList()" [(ngModel)]="toto">
+      <input id="new-bouffe" type="text" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
     </label>
-    <button (click)="addToList()">Ajouter à la liste</button>
+    <button id="new-bouffe-button" (click)="addToList()">Ajouter à la liste</button>
   </div>
 
   <div>
-    <app-choose-for-me [bouffeList]="list"></app-choose-for-me>
+    <app-choose-for-me [bouffeList]="bouffeList"></app-choose-for-me>
   </div>
 </div>
 
