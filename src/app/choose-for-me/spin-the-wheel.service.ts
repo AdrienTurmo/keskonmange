@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {BouffeItem} from './bouffe-item';
+import {BouffeItem} from '../bouffe-item';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpinTheWheelService {
 
-  chooseForMe(list: BouffeItem[]): string {
+  static chooseForMe(list: BouffeItem[]): string {
     const onlyChoosen = list
       .filter(item => item.isWanted)
       .map(item => item.value);
@@ -14,7 +14,8 @@ export class SpinTheWheelService {
     return onlyChoosen[this.getRandomInt(onlyChoosen.length)];
   }
 
-  getRandomInt(max) {
+  private static getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
+
 }
