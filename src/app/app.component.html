@@ -16,7 +16,7 @@
   </div>
   <div>
     <label>
-      <input type="text" [(ngModel)]="toto">
+      <input type="text" (keyup.enter)="addToList()" [(ngModel)]="toto">
     </label>
     <button (click)="addToList()">Ajouter à la liste</button>
   </div>
