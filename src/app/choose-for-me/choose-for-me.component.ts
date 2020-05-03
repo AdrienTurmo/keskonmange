@@ -11,6 +11,7 @@ import {SpinTheWheelService} from './spin-the-wheel.service';
 export class ChooseForMeComponent {
   @Input() bouffeList: BouffeItem[];
   result: string;
+  private spinTheWheelService = new SpinTheWheelService();
 
   spinTheWheel() {
     this.rapidSpin(50, 20);
@@ -23,18 +24,18 @@ export class ChooseForMeComponent {
     this.rapidSpin(4, 1000);
   }
 
-  private rapidSpin(maxTurn = 50, ms = 20) {
-    let turn1;
-    turn1 = 0;
-    let spin1;
-    spin1 = setInterval(() => {
-      if (turn1 <= maxTurn) {
-        this.result = SpinTheWheelService.chooseForMe(this.bouffeList);
-        turn1++;
+  private rapidSpin(maxTurn: number , intervalInMs: number) {
+    let numberOfTurns;
+    numberOfTurns = 0;
+    let interval;
+    interval = setInterval(() => {
+      if (numberOfTurns <= maxTurn) {
+        this.result = this.spinTheWheelService.chooseForMe(this.bouffeList);
+        numberOfTurns++;
       } else {
-        clearInterval(spin1);
+        clearInterval(interval);
       }
-    }, ms);
+    }, intervalInMs);
   }
 
 }

@@ -10,8 +10,8 @@ import {ChooseForMeComponent} from './choose-for-me/choose-for-me.component';
   viewProviders: [ChooseForMeComponent]
 })
 export class AppComponent {
-  bouffeList;
   newBouffe = 'Burger';
+  bouffeList: BouffeItem[];
   result: string;
 
   constructor() {
