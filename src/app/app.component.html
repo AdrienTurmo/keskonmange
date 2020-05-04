@@ -4,6 +4,14 @@
     Keskonmange ?
   </h1>
 
+  <div>
+    <label>
+      <select [(ngModel)]="selectedList" (ngModelChange)="newSelection()">
+        <option *ngFor="let option of bouffeListOptions" >{{option}}</option>
+      </select>
+    </label>
+  </div>
+
   <div class="the-bouffe-list">
     <ul *ngFor="let bouffe of bouffeList" class="bouuf">
       <li>

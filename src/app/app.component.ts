@@ -12,10 +12,19 @@ import {ChooseForMeComponent} from './choose-for-me/choose-for-me.component';
 export class AppComponent {
   newBouffe = 'Burger';
   bouffeList: BouffeItem[];
+  selectedList: string;
+  bouffeListOptions = Object.keys(baseList);
   result: string;
 
   constructor() {
+    this.selectedList = 'baseList';
     this.bouffeList = baseList.baseList.map(item => new BouffeItem(item, true));
+  }
+
+  newSelection() {
+    console.log(baseList[this.selectedList]);
+    console.log(this.selectedList);
+    this.bouffeList = baseList[this.selectedList].map(item => new BouffeItem(item, true));
   }
 
   addToList() {
