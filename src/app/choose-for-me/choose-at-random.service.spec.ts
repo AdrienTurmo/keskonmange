@@ -1,19 +1,19 @@
 import {TestBed} from '@angular/core/testing';
 
-import {SpinTheWheelService} from './spin-the-wheel.service';
+import {ChooseAtRandomService} from './choose-at-random.service';
 import {BouffeItem} from '../bouffe-item';
 
-describe('SpinTheWheelService', () => {
-  let service: SpinTheWheelService;
+describe('ChooseAtRandomService', () => {
+  let service: ChooseAtRandomService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SpinTheWheelService);
+    service = TestBed.inject(ChooseAtRandomService);
   });
 
   it('should select the only wanted bouffe item', () => {
     const bouffeList = [new BouffeItem('Pizza', true), new BouffeItem('Brocolis', false)];
 
-    expect(service.chooseForMe(bouffeList)).toBe('Pizza');
+    expect(service.chooseAtRandom(bouffeList)).toBe('Pizza');
   });
 });

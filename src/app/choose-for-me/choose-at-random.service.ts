@@ -4,9 +4,9 @@ import {BouffeItem} from '../bouffe-item';
 @Injectable({
   providedIn: 'root'
 })
-export class SpinTheWheelService {
+export class ChooseAtRandomService {
 
-  chooseForMe(list: BouffeItem[]): string {
+  chooseAtRandom(list: BouffeItem[]): string {
     const onlyChoosen = list
       .filter(item => item.isWanted)
       .map(item => item.value);
