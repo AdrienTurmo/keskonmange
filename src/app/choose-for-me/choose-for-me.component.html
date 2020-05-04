@@ -1,4 +1,7 @@
-<button (click)="chooseForMe()">
-  Choisir à ma place
-</button>
-<div [ngClass]="{'green': done}">{{result}}</div>
+<div class="random-selection">
+  <button class="random-selection-button" (click)="chooseForMe()">
+    Choisir à ma place
+  </button>
+  <div class="random-selection-result" [ngClass]="{'done': done}">{{result}}</div>
+</div>
+

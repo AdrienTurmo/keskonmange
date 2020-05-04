@@ -9,13 +9,15 @@
 }
 
 .bouffe-pannel {
-  height: 500px;
+  min-height: 500px;
+  max-height: 700px;
   display: flex;
   flex-flow: row nowrap;
 }
 
 .the-bouffe-list {
-  width: 100%;
+  width: 90%;
+  min-width: min-content;
   display: flex;
   flex-flow: column wrap;
   border: solid 1px mediumblue;
@@ -36,10 +38,12 @@
 
 .bouffe-controls {
   width: 10%;
+  min-width: min-content;
   display: flex;
   flex-wrap: wrap;
   border: solid 1px mediumblue;
   border-radius: 10px;
   box-shadow: mediumblue 0 0 5px 5px;
   padding-left: 1%;
+  padding-top: 1%;
 }

@@ -5,12 +5,12 @@ import {ChooseAtRandomService} from './choose-at-random.service';
 @Component({
   selector: 'app-choose-for-me',
   templateUrl: './choose-for-me.component.html',
-  styleUrls: ['./choose-for-me.component.css'],
+  styleUrls: ['./choose-for-me.component.scss'],
   providers: [ChooseAtRandomService]
 })
 export class ChooseForMeComponent {
   @Input() bouffeList: BouffeItem[];
-  result: string;
+  result = 'Je Choisi';
   done: boolean;
   private spinTheWheelService = new ChooseAtRandomService();
 
