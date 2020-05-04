@@ -12,12 +12,9 @@
     <div class="the-bouffe-list">
       <ul *ngFor="let bouffe of bouffeList">
         <li>
-        <span>
-        <label>
-          <input type="checkbox" [(ngModel)]="bouffe.isWanted">
-          {{bouffe.value}}
-        </label>
-        </span>
+          <span class="the-bouffe-list__item" (click)="toggleWanted(bouffe)">
+            {{bouffe.value}}
+          </span>
         </li>
       </ul>
     </div>
@@ -31,7 +28,7 @@
         </span>
         <label>
           <select [(ngModel)]="selectedList" (ngModelChange)="newSelection()">
-            <option *ngFor="let option of bouffeListOptions" >{{option}}</option>
+            <option *ngFor="let option of bouffeListOptions">{{option}}</option>
           </select>
         </label>
       </div>

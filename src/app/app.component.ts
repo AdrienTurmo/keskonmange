@@ -37,4 +37,8 @@ export class AppComponent {
   allRejected() {
     this.bouffeList.forEach(bouffeItem => bouffeItem.isWanted = false);
   }
+
+  toggleWanted(bouffe: BouffeItem) {
+    bouffe.isWanted = !bouffe.isWanted;
+  }
 }
