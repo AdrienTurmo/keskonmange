@@ -17,17 +17,16 @@ export class AppComponent {
   result: string;
 
   constructor() {
-    this.selectedList = 'baseList';
-    this.bouffeList = baseList.baseList.map(item => new BouffeItem(item, true));
+    this.selectedList = 'Basique';
+    this.bouffeList = baseList.Basique.map(item => new BouffeItem(item, true));
   }
 
   newSelection() {
-    console.log(baseList[this.selectedList]);
-    console.log(this.selectedList);
     this.bouffeList = baseList[this.selectedList].map(item => new BouffeItem(item, true));
   }
 
   addToList() {
     this.bouffeList.push(new BouffeItem(this.newBouffe, true));
+    this.newBouffe = '';
   }
 }
