@@ -4,6 +4,10 @@
     Keskonmange ?
   </h1>
 
+  <div>
+    <app-choose-for-me [bouffeList]="bouffeList"></app-choose-for-me>
+  </div>
+
   <div class="bouffe-pannel">
     <div class="the-bouffe-list">
       <ul *ngFor="let bouffe of bouffeList">
@@ -17,8 +21,11 @@
         </li>
       </ul>
     </div>
+  </div>
+
+  <div class="bouffe-navigation">
     <div class="bouffe-controls">
-      <div>
+      <div class="bouffe-controls__item">
         <span>
           Listes pré-établies
         </span>
@@ -29,13 +36,13 @@
         </label>
       </div>
 
-      <div>
+      <div class="bouffe-controls__item">
         <span>Changer la sélection</span>
         <button (click)="allWanted()">Tout séléctionner</button>
         <button (click)="allRejected()">Tout deséléctionner</button>
       </div>
 
-      <div>
+      <div class="bouffe-controls__item">
         <span>
           Ajouter à la liste
         </span>
@@ -47,9 +54,6 @@
     </div>
   </div>
 
-  <div>
-    <app-choose-for-me [bouffeList]="bouffeList"></app-choose-for-me>
-  </div>
 </div>
 
 
