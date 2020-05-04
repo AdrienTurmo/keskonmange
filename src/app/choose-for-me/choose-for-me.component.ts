@@ -16,17 +16,16 @@ export class ChooseForMeComponent {
 
   chooseForMe() {
     this.done = false;
-    let numberOfTurns;
-    numberOfTurns = 0;
+    let numberOfTurns = 0;
     let interval;
     interval = setInterval(() => {
-      if (numberOfTurns <= 10) {
+      if (numberOfTurns <= 20) {
         this.result = this.spinTheWheelService.chooseAtRandom(this.bouffeList);
         numberOfTurns++;
       } else {
         clearInterval(interval);
         this.done = true;
       }
-    }, 50);
+    }, 25);
   }
 }

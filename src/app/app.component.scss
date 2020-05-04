@@ -8,11 +8,16 @@
   color: red;
 }
 
-.the-bouffe-list {
+.bouffe-pannel {
   height: 500px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: row nowrap;
+}
+
+.the-bouffe-list {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
   border: solid 1px mediumblue;
   border-radius: 10px;
   box-shadow: mediumblue 0 0 5px 5px;
@@ -23,4 +28,18 @@
   height: 1%;
   padding: 5px;
   margin: 10px;
+}
+
+.the-bouffe-list li:hover {
+  text-decoration: underline;
+}
+
+.bouffe-controls {
+  width: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px mediumblue;
+  border-radius: 10px;
+  box-shadow: mediumblue 0 0 5px 5px;
+  padding-left: 1%;
 }

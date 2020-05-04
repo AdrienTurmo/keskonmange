@@ -4,29 +4,47 @@
     Keskonmange ?
   </h1>
 
-  <div>
-    <label>
-      <select [(ngModel)]="selectedList" (ngModelChange)="newSelection()">
-        <option *ngFor="let option of bouffeListOptions" >{{option}}</option>
-      </select>
-    </label>
-  </div>
-
-  <div class="the-bouffe-list">
-    <ul *ngFor="let bouffe of bouffeList" class="bouuf">
-      <li>
+  <div class="bouffe-pannel">
+    <div class="the-bouffe-list">
+      <ul *ngFor="let bouffe of bouffeList">
+        <li>
+        <span>
         <label>
           <input type="checkbox" [(ngModel)]="bouffe.isWanted">
+          {{bouffe.value}}
         </label>
-        {{bouffe.value}}
-      </li>
-    </ul>
-  </div>
-  <div>
-    <label>
-      <input id="new-bouffe" type="text" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
-    </label>
-    <button id="new-bouffe-button" (click)="addToList()">Ajouter à la liste</button>
+        </span>
+        </li>
+      </ul>
+    </div>
+    <div class="bouffe-controls">
+      <div>
+        <span>
+          Listes pré-établies
+        </span>
+        <label>
+          <select [(ngModel)]="selectedList" (ngModelChange)="newSelection()">
+            <option *ngFor="let option of bouffeListOptions" >{{option}}</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <span>Changer toute les sélections</span>
+        <button (click)="allWanted()">Tout séléctionner</button>
+        <button (click)="allRejected()">Tout deséléctionner</button>
+      </div>
+
+      <div>
+        <span>
+          Ajouter à la liste
+        </span>
+        <label>
+          <input id="new-bouffe" type="text" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
+        </label>
+        <button id="new-bouffe-button" (click)="addToList()">Ajouter à la liste</button>
+      </div>
+    </div>
   </div>
 
   <div>

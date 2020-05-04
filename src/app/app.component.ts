@@ -29,4 +29,12 @@ export class AppComponent {
     this.bouffeList.push(new BouffeItem(this.newBouffe, true));
     this.newBouffe = '';
   }
+
+  allWanted() {
+    this.bouffeList.forEach(bouffeItem => bouffeItem.isWanted = true);
+  }
+
+  allRejected() {
+    this.bouffeList.forEach(bouffeItem => bouffeItem.isWanted = false);
+  }
 }
