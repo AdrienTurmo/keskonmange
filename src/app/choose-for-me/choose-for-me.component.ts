@@ -11,9 +11,11 @@ import {ChooseAtRandomService} from './choose-at-random.service';
 export class ChooseForMeComponent {
   @Input() bouffeList: BouffeItem[];
   result: string;
+  done: boolean;
   private spinTheWheelService = new ChooseAtRandomService();
 
   chooseForMe() {
+    this.done = false;
     let numberOfTurns;
     numberOfTurns = 0;
     let interval;
@@ -23,6 +25,7 @@ export class ChooseForMeComponent {
         numberOfTurns++;
       } else {
         clearInterval(interval);
+        this.done = true;
       }
     }, 50);
   }
