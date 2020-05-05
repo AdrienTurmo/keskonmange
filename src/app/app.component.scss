@@ -11,10 +11,11 @@
 .bouffe-pannel {
   display: block;
   position: center;
-  margin-right:auto;
-  margin-left:auto;
+  margin-right: auto;
+  margin-left: auto;
   max-width: 500px;
   min-width: min-content;
+  min-height: 94px;
   border: solid 1px mediumblue;
   border-radius: 10px;
   box-shadow: mediumblue 0 0 5px 5px;
@@ -23,31 +24,57 @@
 .the-bouffe-list {
   display: flex;
   flex-flow: row wrap;
-  align-content: space-around;
+  align-content: center;
   justify-content: space-around;
+  padding: 0;
 }
 
 .the-bouffe-list ul {
   list-style: none;
   padding: 5px;
-  margin: 10px;
 }
 
 .the-bouffe-list__item {
-  flex: 10 0 1000px;
   border: solid 1px black;
   border-radius: 15px;
-  display: block;
-  width: 200px;
+  display: grid;
+  grid-auto-columns: 10%;
+  width: 225px;
   height: 50px;
   font-size: 20px;
-  padding-top: 7px;
-  text-align: center;
+  overflow: hidden;
+}
+
+.the-bouffe-list__item__value {
+  grid-row: 1;
+  grid-column: 2 / 11;
+  align-self: center;
+  justify-self: center;
+  font-size: 100%;
 }
 
 .the-bouffe-list__item:hover {
   color: white;
   background-color: lightseagreen;
+}
+
+.the-bouffe-list__item__selected {
+  grid-row: 1;
+  grid-column: 1;
+  background-color: green;
+}
+
+.the-bouffe-list__item__selected[aria-selected=true] {
+  background-color: green;
+}
+
+.the-bouffe-list__item__selected[aria-selected=false] {
+  background-color: red;
+}
+
+.the-bouffe-list__item__selected::before {
+  content: " ";
+  white-space: pre;
 }
 
 .bouffe-navigation {
@@ -58,6 +85,7 @@
   top: 0;
   left: 0;
 }
+
 .bouffe-controls {
   padding-top: 20px;
   display: flex;

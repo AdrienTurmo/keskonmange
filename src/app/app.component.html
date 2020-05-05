@@ -13,7 +13,8 @@
       <ul *ngFor="let bouffe of bouffeList">
         <li>
           <span class="the-bouffe-list__item" (click)="toggleWanted(bouffe)">
-            {{bouffe.value}}
+            <span class="the-bouffe-list__item__selected" [ngStyle]="{'background-color': bouffe.isWanted ? 'green' : 'red'}"></span>
+            <span class="the-bouffe-list__item__value">{{bouffe.value}}</span>
           </span>
         </li>
       </ul>
@@ -44,7 +45,7 @@
           Ajouter à la liste
         </span>
         <label>
-          <input id="new-bouffe" type="text" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
+          <input id="new-bouffe" type="text" maxlength="18" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
         </label>
         <button id="new-bouffe-button" (click)="addToList()">Ajouter à la liste</button>
       </div>
