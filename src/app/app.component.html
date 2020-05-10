@@ -8,7 +8,7 @@
     <app-choose-for-me [bouffeList]="bouffeList"></app-choose-for-me>
   </div>
 
-  <div class="bouffe-pannel">
+  <div class="bouffe-center">
     <div class="the-bouffe-list">
       <ul *ngFor="let bouffe of bouffeList">
         <li>
@@ -21,36 +21,8 @@
     </div>
   </div>
 
-  <div class="bouffe-navigation">
-    <div class="bouffe-controls">
-      <div class="bouffe-controls__item">
-        <span>
-          Listes pré-établies
-        </span>
-        <label>
-          <select [(ngModel)]="selectedList" (ngModelChange)="newSelection()">
-            <option *ngFor="let option of bouffeListOptions">{{option}}</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="bouffe-controls__item">
-        <span>Changer la sélection</span>
-        <button (click)="allWanted()">Tout séléctionner</button>
-        <button (click)="allRejected()">Tout deséléctionner</button>
-      </div>
-
-      <div class="bouffe-controls__item">
-        <span>
-          Ajouter à la liste
-        </span>
-        <label>
-          <input id="new-bouffe" type="text" maxlength="40" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
-        </label>
-        <button id="new-bouffe-button" (click)="addToList()">Ajouter à la liste</button>
-      </div>
-    </div>
-  </div>
+  <app-bouffe-control-pannel [(bouffeList)]="bouffeList">
+  </app-bouffe-control-pannel>
 
 </div>
 

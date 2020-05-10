@@ -8,7 +8,7 @@
   color: red;
 }
 
-.bouffe-pannel {
+.bouffe-center {
   display: block;
   position: center;
   margin-right: auto;
@@ -24,9 +24,7 @@
 .the-bouffe-list {
   display: flex;
   flex-flow: row wrap;
-  //align-content: center;
   justify-content: space-around;
-  //padding: 0;
 }
 
 .the-bouffe-list ul {
@@ -77,26 +75,4 @@
 .the-bouffe-list__item__selected::before {
   content: " ";
   white-space: pre;
-}
-
-.bouffe-navigation {
-  height: 100%;
-  width: min-content;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-}
-
-.bouffe-controls {
-  padding-top: 20px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  height: 100%;
-  border-right: solid 1px mediumblue;
-}
-
-.bouffe-controls__item {
-  margin: 10px;
 }

@@ -1,0 +1,21 @@
+.bouffe-navigation {
+  height: 100%;
+  width: min-content;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.bouffe-controls {
+  padding-top: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  height: 100%;
+  border-right: solid 1px mediumblue;
+}
+
+.bouffe-controls__item {
+  margin: 10px;
+}

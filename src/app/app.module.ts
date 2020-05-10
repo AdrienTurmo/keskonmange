@@ -4,11 +4,13 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {ChooseForMeComponent} from './choose-for-me/choose-for-me.component';
+import {BouffeControlPannelComponent} from './bouffe-control-pannel/bouffe-control-pannel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChooseForMeComponent,
+    BouffeControlPannelComponent,
   ],
   imports: [
     BrowserModule,
