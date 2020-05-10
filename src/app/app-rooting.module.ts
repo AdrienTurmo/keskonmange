@@ -5,7 +5,6 @@ import {TheBouffeListComponent} from './the-bouffe-list/the-bouffe-list.componen
 const routes: Routes = [
   {path: 'keskonmange', component: TheBouffeListComponent},
   {path: '', redirectTo: 'keskonmange', pathMatch: 'full'},
-  {path: 'pizza', redirectTo: 'keskonmange', data: {pizzaOnly: 'true'}}
 ];
 
 @NgModule({
