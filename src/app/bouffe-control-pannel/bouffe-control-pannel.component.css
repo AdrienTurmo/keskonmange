@@ -7,7 +7,7 @@
   left: 0;
   background-color: cadetblue;
   transition: left 0.5s ease-in-out;
-  font-weight: bold;
+  font-size: 20px;
 }
 
 .bouffe-navigation__closed {
@@ -46,6 +46,11 @@
   height: 30px;
   margin-top: 5px;
   font-size: 15px;
+  font-family: inherit;
+}
+
+.test {
+  font-family: 'Arial', cursive !important;
 }
 
 .bouffe-navigation button {
