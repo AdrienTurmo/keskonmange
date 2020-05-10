@@ -4,7 +4,6 @@ import {TheBouffeListComponent} from './the-bouffe-list.component';
 import {AppComponent} from '../app.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import {Component, Input} from '@angular/core';
 
 describe('TheBouffeListComponent', () => {
   let fixture;
@@ -13,8 +12,7 @@ describe('TheBouffeListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        MockChooseForMeComponent
+        AppComponent
       ],
       imports: [FormsModule, BrowserModule]
     }).compileComponents().then(() => {
@@ -23,11 +21,3 @@ describe('TheBouffeListComponent', () => {
     });
   }));
 });
-
-@Component({
-  selector: 'app-choose-for-me',
-  template: '<p>Mock Product Editor Component</p>'
-})
-class MockChooseForMeComponent {
-  @Input() bouffeList;
-}
