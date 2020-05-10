@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import baseList from '../../assets/baseList.json';
-import {BouffeItem} from '../bouffe-item';
+import baseList from '../../../assets/baseList.json';
+import {BouffeItem} from '../../bouffe-item';
 
 @Component({
   selector: 'app-bouffe-control-pannel',

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BouffeItem} from '../bouffe-item';
+import {BouffeItem} from '../../bouffe-item';
 
 @Injectable({
   providedIn: 'root'

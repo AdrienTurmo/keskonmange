@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BouffeItem} from '../bouffe-item';
+import {BouffeItem} from '../../bouffe-item';
 import {ChooseAtRandomService} from './choose-at-random.service';
 
 @Component({

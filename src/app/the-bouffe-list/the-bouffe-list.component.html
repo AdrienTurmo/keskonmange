@@ -1,0 +1,26 @@
+<div class="main-page" role="main">
+
+  <h1 class="title" id="title">
+    Keskonmange ?
+  </h1>
+
+  <div>
+    <app-choose-for-me *ngIf="bouffeList" [bouffeList]="bouffeList"></app-choose-for-me>
+  </div>
+
+  <div class="bouffe-center">
+    <div class="the-bouffe-list">
+      <ul *ngFor="let bouffe of bouffeList">
+        <li>
+          <span class="the-bouffe-list__item" (click)="toggleWanted(bouffe)">
+            <span class="the-bouffe-list__item__selected" [ngStyle]="{'background-color': bouffe.isWanted ? 'green' : 'red'}"></span>
+            <span class="the-bouffe-list__item__value">{{bouffe.value}}</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <app-bouffe-control-pannel [(bouffeList)]="bouffeList"></app-bouffe-control-pannel>
+
+</div>

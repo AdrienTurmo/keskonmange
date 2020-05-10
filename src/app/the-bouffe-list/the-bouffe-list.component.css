@@ -1,0 +1,66 @@
+.title {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-size: 50px;
+}
+
+.bouffe-center {
+  display: block;
+  position: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 500px;
+  min-width: min-content;
+  min-height: 94px;
+  border-radius: 10px;
+  box-shadow: cadetblue 1px 1px 2px 2px;
+}
+
+.the-bouffe-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.the-bouffe-list ul {
+  list-style: none;
+  margin: 5px;
+  padding: 5px;
+}
+
+.the-bouffe-list__item {
+  border-radius: 15px;
+  display: grid;
+  grid-auto-columns: 10%;
+  width: 225px;
+  min-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  overflow: hidden;
+  box-shadow: cadetblue 1px 1px 2px 2px;
+}
+
+.the-bouffe-list__item__value {
+  grid-row: 1;
+  grid-column: 2 / 11;
+  align-self: center;
+  justify-self: center;
+  font-size: 100%;
+}
+
+.the-bouffe-list__item:hover {
+  color: white;
+  background-color: lightseagreen;
+}
+
+.the-bouffe-list__item__selected {
+  grid-row: 1;
+  grid-column: 1;
+  background-color: green;
+}
+
+.the-bouffe-list__item__selected::before {
+  content: " ";
+  white-space: pre;
+}
