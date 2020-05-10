@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {BouffeItem} from '../bouffe-item';
 import {ChooseAtRandomService} from './choose-at-random.service';
 
@@ -8,11 +8,15 @@ import {ChooseAtRandomService} from './choose-at-random.service';
   styleUrls: ['./choose-for-me.component.scss'],
   providers: [ChooseAtRandomService]
 })
-export class ChooseForMeComponent {
+export class ChooseForMeComponent implements OnInit {
   @Input() bouffeList: BouffeItem[];
   result = 'Je Choisi';
   done: boolean;
   private spinTheWheelService = new ChooseAtRandomService();
+
+  ngOnInit(): void {
+    this.bouffeList = [];
+  }
 
   chooseForMe() {
     this.done = false;

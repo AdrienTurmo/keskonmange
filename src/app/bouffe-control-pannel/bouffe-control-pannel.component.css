@@ -1,21 +1,49 @@
 .bouffe-navigation {
   height: 100%;
-  width: min-content;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
+  background-color: cadetblue;
+  transition: left 0.5s ease-in-out;
+}
+
+.bouffe-navigation__closed {
+  left: -170px;
+  transition: left 0.5s ease-in-out;
 }
 
 .bouffe-controls {
   padding-top: 20px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
+  display: block;
   height: 100%;
-  border-right: solid 1px mediumblue;
 }
 
 .bouffe-controls__item {
   margin: 10px;
+  float: left;
+}
+
+.chevrom_img {
+  height: 20px;
+  float: right;
+  margin: 5px;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.chevrom_img__closed {
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes rotate_180 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
 }

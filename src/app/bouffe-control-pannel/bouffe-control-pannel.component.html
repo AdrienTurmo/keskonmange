@@ -1,4 +1,5 @@
-<div class="bouffe-navigation">
+<div class="bouffe-navigation" [ngClass]="{'bouffe-navigation__closed' : pannelIsClosed }">
+  <img class="chevrom_img" src="img/chevron.png" alt="<<" (click)="toggleControlPannel()" [ngClass]="{'chevrom_img__closed' : pannelIsClosed }">
   <div class="bouffe-controls">
     <div class="bouffe-controls__item">
         <span>

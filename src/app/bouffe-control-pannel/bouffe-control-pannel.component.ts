@@ -13,10 +13,11 @@ export class BouffeControlPannelComponent implements OnInit{
   bouffeListOptions = Object.keys(baseList);
   selectedList: string;
   newBouffe = 'Burger';
+  pannelIsClosed = false;
 
   ngOnInit(): void {
-    this.selectedList = 'Basique';
-    this.bouffeList = baseList.Basique.map(item => new BouffeItem(item, true));
+    this.selectedList = 'Vide';
+    this.bouffeList = baseList.Vide;
     this.bouffeListChange.emit(this.bouffeList);
   }
 
@@ -38,4 +39,7 @@ export class BouffeControlPannelComponent implements OnInit{
     this.bouffeList.forEach(bouffeItem => bouffeItem.isWanted = false);
   }
 
+  toggleControlPannel() {
+    this.pannelIsClosed = !this.pannelIsClosed;
+  }
 }
