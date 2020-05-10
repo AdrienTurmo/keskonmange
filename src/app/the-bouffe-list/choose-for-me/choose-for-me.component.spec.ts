@@ -19,7 +19,4 @@ describe('ChooseForMeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
