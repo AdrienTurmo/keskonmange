@@ -13,7 +13,9 @@
     </div>
 
     <div class="bouffe-controls__item">
-      <span>Changer la sélection</span>
+      <span>
+        Changer la sélection
+      </span>
       <button (click)="allWanted()">Tout séléctionner</button>
       <button (click)="allRejected()">Tout deséléctionner</button>
     </div>
@@ -25,7 +27,7 @@
       <label>
         <input id="new-bouffe" type="text" maxlength="40" (keyup.enter)="addToList()" [(ngModel)]="newBouffe">
       </label>
-      <button id="new-bouffe-button" (click)="addToList()">Ajouter à la liste</button>
+      <button id="new-bouffe-button" (click)="addToList()">Ajouter</button>
     </div>
   </div>
 </div>

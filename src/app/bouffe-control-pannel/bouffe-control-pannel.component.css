@@ -7,6 +7,7 @@
   left: 0;
   background-color: cadetblue;
   transition: left 0.5s ease-in-out;
+  font-weight: bold;
 }
 
 .bouffe-navigation__closed {
@@ -38,12 +39,23 @@
   transition: all 0.5s ease-in-out;
 }
 
-@keyframes rotate_180 {
-  from {
-    transform: rotate(0deg);
-  }
+.bouffe-navigation button, select, input {
+  border-radius: 5px;
+  border: none;
+  width: 160px;
+  height: 30px;
+  margin-top: 5px;
+  font-size: 15px;
+}
 
-  to {
-    transform: rotate(180deg);
-  }
+.bouffe-navigation button {
+  background-color: aqua;
+}
+
+.bouffe-navigation button:hover {
+  box-shadow: black 1px 1px 1px 1px;
+}
+
+.bouffe-navigation input {
+  width: 158px;
 }
