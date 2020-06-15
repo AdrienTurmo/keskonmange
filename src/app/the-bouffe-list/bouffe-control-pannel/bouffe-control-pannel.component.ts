@@ -8,7 +8,7 @@ import {BouffeItem} from '../../bouffe-item';
   styleUrls: ['./bouffe-control-pannel.component.css']
 })
 export class BouffeControlPannelComponent implements OnInit{
-  @Input() @Output() bouffeList: BouffeItem[];
+  @Input() bouffeList: BouffeItem[];
   @Output() bouffeListChange = new EventEmitter<BouffeItem[]>();
   bouffeListOptions = Object.keys(baseList);
   selectedList: string;
